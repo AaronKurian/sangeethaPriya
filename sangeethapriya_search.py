@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # Sangeethapriya search: fetch results, filter by term, optional ffprobe metadata. Usage: python sangeethapriya_search.py
 
 import base64

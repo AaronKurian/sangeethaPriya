@@ -146,7 +146,13 @@ def main() -> None:
         print(f"Error fetching data: {e}")
         return
     heading, songs = scrape_song_data(html)
-    songs = [s for s in songs if filename_matches_search(s["filename"], query)][:10]
+    songs = [s for s in songs if filename_matches_search(s["filename"], query)]
+    total = len(songs)
+    songs = songs[:10]
+    if total > 10:
+        print(f"Total matches: {total}. Storing only 10.")
+    elif total:
+        print(f"Total matches: {total}. Storing all {total}.")
 
     skip_meta = os.environ.get("SP_SKIP_DURATION", "").strip().lower() in ("1", "true", "yes")
     for s in songs:

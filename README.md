@@ -23,10 +23,6 @@ Outputs:
 - **Python 3** (no specific minimum; uses only the standard library).
 - **ffmpeg** (for **ffprobe**) — only if you want duration, size, artist, and composer. Without it, those fields are left empty.
 
-### About `requirements.txt`
-
-This project has **no pip dependencies**. The `requirements.txt` file only documents that and explains how to install **ffmpeg** on your system for the optional metadata. You do **not** need to run `pip install -r requirements.txt` for the script to work; use it as a reference for installing ffmpeg if you want metadata.
-
 To install ffmpeg:
 
 - **Ubuntu/Debian:** `sudo apt install ffmpeg`
@@ -50,13 +46,6 @@ To install ffmpeg:
    - Filter and keep the first 10 matching songs
    - Optionally run ffprobe for each stream (unless disabled, see below)
    - Write `sangeethapriya_<term>.json` and `sangeethapriya_<term>_songs.txt`
-
-### Environment variable
-
-- **`SP_SKIP_DURATION`** — If set to `1`, `true`, or `yes`, the script skips all ffprobe calls. Duration, size, artist, and composer will be empty, but the script runs faster and does not require ffmpeg.
-  ```bash
-  SP_SKIP_DURATION=1 python3 sangeethapriya_search.py
-  ```
 
 ### Example
 
